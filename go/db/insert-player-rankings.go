@@ -1,21 +1,15 @@
-package main
+package db
 
 import (
+	"TTSavant/structs"
 	"context"
 
 	"github.com/jackc/pgx/v5"
 )
 
+type IttfPlayerRanking = structs.IttfPlayerRanking
 
-func getDBConnection() (*pgx.Conn, error) {
-    conn, err := pgx.Connect(context.Background(), "postgres://postgres:password@localhost:5432/postgres")
-    if err != nil {
-        return nil, err
-    }
-    return conn, nil
-}
-
-func insertPlayers(players []IttfPlayer, conn *pgx.Conn) error {
+func InsertPlayerRankings(players []IttfPlayerRanking, conn *pgx.Conn) error {
     batch := &pgx.Batch{}
     for _, player := range players {
         batch.Queue(

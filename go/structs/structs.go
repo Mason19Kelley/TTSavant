@@ -1,6 +1,6 @@
-package main
+package structs
 
-type IttfPlayer struct {
+type IttfPlayerRanking struct {
 	IttfId                 string `json:"IttfId"`
 	PlayerName             string `json:"PlayerName"`
 	CountryCode            string `json:"CountryCode"`
