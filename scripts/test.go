@@ -20,7 +20,15 @@ func main() {
     playersJSON, err := json.MarshalIndent(players, "", "  ")
     if err != nil {
         fmt.Println(err)
+		fmt.Println(playersJSON)
         return
     }
-    fmt.Println(string(playersJSON))
+    conn, err := getDBConnection()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	insertPlayers(players, conn)
+	
 }
