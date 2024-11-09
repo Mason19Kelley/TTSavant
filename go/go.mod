@@ -1,4 +1,4 @@
-module scripts
+module TTSavant
 
 go 1.23.3
 

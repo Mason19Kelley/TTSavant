@@ -1,4 +1,4 @@
-package main
+package structs
 
 type IttfPlayer struct {
 	IttfId                 string `json:"IttfId"`
