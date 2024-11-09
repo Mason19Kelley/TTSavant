@@ -13,7 +13,7 @@ func InsertPlayerRankings(players []IttfPlayerRanking, conn *pgx.Conn) error {
     batch := &pgx.Batch{}
     for _, player := range players {
         batch.Queue(
-            `INSERT INTO IttfPlayer (
+            `INSERT INTO ittf_player_rankings (
                 IttfId, PlayerName, CountryCode, CountryName, 
                 AssociationCountryCode, AssociationCountryName, 
                 CategoryCode, AgeCategoryCode, SubEventCode, 
